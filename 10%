@@ -1,1 +1,21 @@
 
+USE AdventureWorks2012;
+select * from data
+where SoldDate  between  '8/1/2019' and '8/30/2019'
+order by SoldDate;
+
+select count(*) from  data
+where SoldDate  between  '8/1/2019' and '8/15/2019';
+
+USE AdventureWorks2012;
+select  count(*) from  data
+where SoldDate  > '8/15/2019';
+
+USE AdventureWorks2012;
+select  count(*) from  data
+where SoldDate  < '8/15/2019';
+
+select month(soldDate) as month
+from data;
+
+
