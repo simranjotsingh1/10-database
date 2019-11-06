@@ -50,3 +50,8 @@ Bedroom from data
 where SoldDate  between '9/1/2019' and '9/15/2019'
 group by Type, Description
 order by AVG([Sold Price]) desc;
+
+
+select left(Streetname,1) as streetletter from data;
+
+
