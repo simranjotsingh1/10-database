@@ -19,3 +19,34 @@ select month(soldDate) as month
 from data;
 
 
+select Type, Description, AVG([Sold Price]) from data
+group by Type, Description
+order by AVG([Sold Price]) desc;
+
+select Type, Description, AVG([Sold Price]) ,
+Avg(Bedroom) 
+Bedroom from data
+group by Type, Description
+order by AVG([Sold Price]) desc;
+
+select Type, Description, AVG([Sold Price]) ,count(*),
+Avg(Bedroom) 
+Bedroom from data
+where SoldDate  between '9/15/2019' and '9/30/2019'
+group by Type, Description
+order by AVG([Sold Price]) desc;
+
+select count(Type), Type, Description, AVG([Sold Price]) ,
+Avg(Bedroom) 
+Bedroom from data
+where SoldDate  between '9/15/2019' and '9/30/2019'
+group by Type, Description
+order by AVG([Sold Price]) desc;
+
+
+select count(Type), Type, Description, AVG([Sold Price]) ,
+Avg(Bedroom) 
+Bedroom from data
+where SoldDate  between '9/1/2019' and '9/15/2019'
+group by Type, Description
+order by AVG([Sold Price]) desc;
