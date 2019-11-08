@@ -72,7 +72,7 @@ select Type,AVG([Sold Price])
 from data
 where month(SoldDate) between 7 and 9
 group by Type;
-
+-------------------------------------------------------------------------------------
 
 select Type,AVG([Sold Price]) as SoldPriceAverage
 from data
@@ -80,7 +80,7 @@ where month(SoldDate) between 7 and 9
 group by Type
 order by AVG([Sold Price]) desc;
 
-
+------------------------------------------------------------------------------------
 -- average selling price per type of house
 -- per number of bedrooms
 select Type,Description,Bedroom, Baths, Basement1, AVG([Sold Price]) as SoldPriceAverage
@@ -93,7 +93,7 @@ order by AVG([Sold Price]) desc;
 select * from tblEmployee;
 
 select * from tblTransaction;
-
+------------------------------------------------------------------------------------
 Create view EmployeeProfile as
 SELECT e.EmployeeFirstName,e.EmployeeLastName,e.DateOfBirth,d.DepartmentHead
 from tblEmployee as e ,tblDepartment as d
@@ -105,11 +105,11 @@ and month(e.DateOfBirth) in (1,2,3);
 select * from EmployeeProfile;
 
 Drop table EmployeeProfile;
-
+------------------------------------------------------------------------------------
 create view EmployeeProfile as
 select * from tblEmployee as e
 where e.employeeLastName > 'M';
-
+-----------------------------------------------------------------------------------
 create view WinningEmployee1 as
 select * from employeeprofile
 where EmployeeFirstName in ('jane','Rob');
