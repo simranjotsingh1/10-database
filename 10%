@@ -65,3 +65,31 @@ left(Streetname,2) = 'Al';
 select left(Streetname,1) as Initial, count(*) as CountOfInitial
 from data
 group by left(Streetname,1);
+
+\
+
+select Type,AVG([Sold Price])
+from data
+where month(SoldDate) between 7 and 9
+group by Type;
+
+
+select Type,AVG([Sold Price]) as SoldPriceAverage
+from data
+where month(SoldDate) between 7 and 9
+group by Type
+order by AVG([Sold Price]) desc;
+
+
+-- average selling price per type of house
+-- per number of bedrooms
+select Type,Description,Bedroom, Baths, Basement1, AVG([Sold Price]) as SoldPriceAverage
+from data
+where month(SoldDate) between 7 and 9
+group by Type,Description,Bedroom,Baths,Basement1
+order by AVG([Sold Price]) desc;
+
+
+select * from tblEmployee;
+
+select * from tblTransaction;
