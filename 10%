@@ -93,3 +93,26 @@ order by AVG([Sold Price]) desc;
 select * from tblEmployee;
 
 select * from tblTransaction;
+
+Create view EmployeeProfile as
+SELECT e.EmployeeFirstName,e.EmployeeLastName,e.DateOfBirth,d.DepartmentHead
+from tblEmployee as e ,tblDepartment as d
+where e.Department = d.Department and year(e.DateOfBirth) > 1970
+and month(e.DateOfBirth) in (1,2,3);
+
+
+
+select * from EmployeeProfile;
+
+Drop table EmployeeProfile;
+
+create view EmployeeProfile as
+select * from tblEmployee as e
+where e.employeeLastName > 'M';
+
+create view WinningEmployee1 as
+select * from employeeprofile
+where EmployeeFirstName in ('jane','Rob');
+
+select * from WinningEmployee1;
+
