@@ -116,3 +116,31 @@ where EmployeeFirstName in ('jane','Rob');
 
 select * from WinningEmployee1;
 
+
+select s.StudentID , s.StudentName , s.Coursenumber as Course , c.RoomNunber as Roomnumber
+
+from students as s ,classroom as c 
+
+where s.SectionNumber =c.SectionNumber  
+
+select * from student
+order by StudentName;
+
+select * from classroom;
+
+insert into student
+values(109,'George','python','G3')
+
+drop table studentdata;
+
+ ALTER TABLE student
+DROP  studentrecord;
+
+Alter Table student
+add constraint studentrecord unique(StudentId,StudentName,SectionNumber);
+
+delete from student 
+where studentname = 'George';
+
+Alter Table students
+add constraint uc unique(studentid,sectionNumber);
