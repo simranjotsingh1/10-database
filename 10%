@@ -144,3 +144,48 @@ where studentname = 'George';
 
 Alter Table students
 add constraint uc unique(studentid,sectionNumber);
+
+
+select * from [dbo].[customersales]
+
+select * from [dbo].[shoes]
+
+
+select * from [dbo].[customersales]
+where brandname = 'Jansport';
+
+select * from [dbo].[customersales]
+order by brandname Asc;
+
+
+select * from [dbo].[shoes]
+order by brandname Asc;
+
+
+Alter table shoes
+add constraint Pk_product
+primary key (price, color, style, brandname)
+
+
+Alter table customersales
+Alter column brandname nvarchar(255) Not Null;
+
+
+Alter table customersales
+add constraint Pk_customersales
+primary key ( color, style,brandname)
+
+
+Alter table shoes
+  add constraint FK_Sales_customer
+    FOREIGN KEY (color, Style , brandname)
+    REFERENCES customersales (color, style,brandname)
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
+
+ALTER TABLE customersales
+drop constraint Pk_customersales
+
+select customername, purchasedate ,color, style,brandname from customersales
+GROUP BY customername, purchasedate, color, style,brandname;
+
