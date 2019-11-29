@@ -116,6 +116,7 @@ where EmployeeFirstName in ('jane','Rob');
 
 select * from WinningEmployee1;
 
+===================================================================================================================
 
 select s.StudentID , s.StudentName , s.Coursenumber as Course , c.RoomNunber as Roomnumber
 
@@ -145,6 +146,7 @@ where studentname = 'George';
 Alter Table students
 add constraint uc unique(studentid,sectionNumber);
 
+==========================================================================================================================
 
 select * from [dbo].[customersales]
 
@@ -165,6 +167,13 @@ order by brandname Asc;
 Alter table shoes
 add constraint Pk_product
 primary key (price, color, style, brandname)
+
+
+Alter table shoes
+Alter column color  nvarchar(255) Not Null;
+
+Alter table shoes
+Alter column brandname  nvarchar(255) Not Null;
 
 
 Alter table customersales
