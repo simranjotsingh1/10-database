@@ -199,6 +199,13 @@ select customername, purchasedate ,color, style,brandname from customersales
 GROUP BY customername, purchasedate, color, style,brandname;
 
 =====================================================
+Alter table owners
+Alter column Address nvarchar(255) Not Null;
+
+Alter table owners
+Alter column cell nvarchar(255) Not Null;
+
+
 alter table owner
 Add constraint PK_DogOwners primary Key (
 owner
@@ -215,3 +222,25 @@ Alter Table Dogs
       REFERENCES owners (owner)
 	  On DELETE CASCADE
 	  ON UPDATE CASCADE
+	  
+	  
+=============================================================================================
+Insert into owners (owner, address, cell)
+values( 'John', '123 Main','444-343-2343' );
+
+
+Insert into dogs (dog, owner, favtoy)
+values( 'Clarence', 'Mary','ball' );
+
+select * from owners
+
+
+select * from dogs order by owner;
+
+
+select * from owners where owner in 
+('Mary');
+
+delete from dogs
+where owner = 'Mary';
+
