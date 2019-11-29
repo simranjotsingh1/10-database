@@ -198,3 +198,20 @@ drop constraint Pk_customersales
 select customername, purchasedate ,color, style,brandname from customersales
 GROUP BY customername, purchasedate, color, style,brandname;
 
+=====================================================
+alter table owner
+Add constraint PK_DogOwners primary Key (
+owner
+)
+
+
+alter table owners Drop constraint Pk_DogOwners
+
+
+Alter Table Dogs
+ Add constraint FK_DogAndOwners FOREIGN kEY(
+ owner
+ )
+      REFERENCES owners (owner)
+	  On DELETE CASCADE
+	  ON UPDATE CASCADE
