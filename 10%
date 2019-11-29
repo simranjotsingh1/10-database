@@ -185,8 +185,8 @@ add constraint Pk_customersales
 primary key ( color, style,brandname)
 
 
-Alter table shoes
-  add constraint FK_Sales_customer
+Alter table customersales
+  add constraint FK_SalesRecord
     FOREIGN KEY (color, Style , brandname)
     REFERENCES customersales (color, style,brandname)
 	ON DELETE CASCADE
